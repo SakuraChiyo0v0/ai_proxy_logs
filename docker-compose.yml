@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  ai-proxy:
+    build: .
+    container_name: ai-proxy
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    restart: always
+    # If you want to persist logs locally as well (optional, mainly for debug)
+    # volumes:
+    #   - ./logs:/app/logs
