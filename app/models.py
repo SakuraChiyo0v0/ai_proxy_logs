@@ -7,8 +7,8 @@ class RequestLog(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     timestamp = Column(DateTime(timezone=True), server_default=func.now())
-    method = Column(String)
-    url = Column(String)
+    method = Column(String(20))
+    url = Column(String(2048))
     request_body = Column(Text, nullable=True)  # Stored as JSON string
     system_prompt = Column(Text, nullable=True) # Extracted system prompt
     response_status = Column(Integer)
